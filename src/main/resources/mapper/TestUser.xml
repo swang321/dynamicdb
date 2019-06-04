@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dynamicdb.mapper.TestUserMapper">
+
+
+    <select id="findAll" resultType="com.dynamicdb.pojo.TestUser">
+        select * from test_user
+    </select>
+
+    <update id="update" parameterType="com.dynamicdb.pojo.TestUser">
+        UPDATE test_user SET name=#{name}
+	    WHERE  id=#{id}
+    </update>
+
+    <insert id="insert" parameterType="com.dynamicdb.pojo.TestUser">
+      INSERT INTO test_user (id, name) VALUES (#{id}, #{name})
+    </insert>
+
+</mapper>
